@@ -60,7 +60,7 @@ export default function SignUpScreen() {
         />
         <TouchableOpacity onPress={togglePasswordVisibility} style={styles.eyeIconContainer}>
           <Image 
-            source={isPasswordVisible ? require('../assets/eyes.png') : require('../assets/eyess.png')} 
+            source={isPasswordVisible ? require('../assets/eyes.png') : require('../assets/eyes.png')} 
             style={styles.eyeIcon} 
           />
         </TouchableOpacity>
@@ -76,7 +76,7 @@ export default function SignUpScreen() {
         />
         <TouchableOpacity onPress={toggleConfirmPasswordVisibility} style={styles.eyeIconContainer}>
           <Image 
-            source={isConfirmPasswordVisible ? require('../assets/eyes.png') : require('../assets/eyess.png')} 
+            source={isConfirmPasswordVisible ? require('../assets/eyes.png') : require('../assets/eyes.png')} 
             style={styles.eyeIcon} 
           />
         </TouchableOpacity>

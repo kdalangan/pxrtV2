@@ -6,17 +6,18 @@ export default function ResultScreen({ navigation }) {
   // Mock data for demonstration
   const errors = [
     { id: 1, type: 'Copper', description: 'Error 1: Copper' },
-    { id: 2, type: 'Short', description: 'Error 2: Short' },
-    { id: 3, type: 'Open', description: 'Error 3: Open' },
-    { id: 4, type: 'Pin-hole', description: 'Error 4: Pin-hole' },
+    { id: 2, type: 'Pin-hole', description: 'Error 2: Pin-hole' },
+    { id: 3, type: 'Mousebite', description: 'Error 3: Mousebite' },
+    { id: 4, type: 'Protrusion', description: 'Error 4: Protrusion' },
   ];
 
   const feedbacks = {
-    open: 'Defect Type: Open Circuit\nImpact: Electrical connectivity issues.\nSolution: Check for broken traces or disconnects.',
-    short: 'Defect Type: Short Circuit\nImpact: Excessive current flow, potential overheating.\nSolution: Inspect for unintended connections between traces.',
     copper: 'Defect Type: Copper Puddles\nImpact: Insulation issues.\nSolution: Ensure proper etching and copper deposition processes.',
     'pin-hole': 'Defect Type: Pin-hole\nImpact: Weak solder joints.\nSolution: Improve surface finish and soldering techniques.',
+    mousebite: 'Defect Type: Mousebite\nImpact: Possible leak paths.\nSolution: Verify that all vias are properly filled and sealed.',
+    protrusion: 'Defect Type: Protrusion\nImpact: Signal degradation.\nSolution: Remove or reduce the length of spurs using a PCB editor.',
   };
+  
 
   const handleBack = () => {
     navigation.navigate('dashboard'); // Navigate to dashboard screen
@@ -41,7 +42,7 @@ export default function ResultScreen({ navigation }) {
 
       {/* Image Section */}
       <View style={styles.imageContainer}>
-        <Image source={require('../assets/copper.png')} style={styles.pcbImage} />
+        <Image source={require('../assets/all.png')} style={styles.pcbImage} />
       </View>
 
       {/* Error Feedback Section */}
@@ -54,7 +55,7 @@ export default function ResultScreen({ navigation }) {
             </View>
             <Text style={styles.errorDescription}>
               {error.description}
-              {"\n\n"} {/* Add spacing for better readability */}
+              {"\n"} {/* Add spacing for better readability */}
               <Text style={styles.feedbackText}>{feedbacks[error.type.toLowerCase()]}</Text>
             </Text>
           </View>
@@ -87,11 +88,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 50,
     borderRadius: 50,
     justifyContent: 'center',
+    marginTop: 30,
   },
   uploadText: {
     color: '#00000',
     alignItems: 'center',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   imageContainer: {
@@ -125,7 +127,7 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
   },
   errorImagePlaceholder: {
-    width: 50,
+    width: 70,
     height: 50,
     backgroundColor: '#E0E0E0',
     borderRadius: 5,

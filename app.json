@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
+          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-font",
+      "expo-build-properties"
+    ],
+    "name": "pxrt",
+    "slug": "pxrt",
+    "android": {
+      "package": "com.kdalangan.pxrt",
+      "buildProperties": {
+        "enablePngCrunchInReleaseBuilds": false
+      }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "cb0f8de8-d3c1-4bf2-8e6e-fdbc91ec9eeb"
+      }
+    },
+    "owner": "kdalangan",
+    "ios": {
+      "bundleIdentifier": "com.kdalangan.pxrt"
+    }
+  }
+}
